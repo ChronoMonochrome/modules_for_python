@@ -1,15 +1,13 @@
-from mymath import *
+from mymath import NOD
+
 def NOK(m,n):
-	k,p=min([m,n]),max([m,n])
-	fk=factorization(k)
-	for i in factorization(p):
-		if not i in fk: k*=i
-		else: del(fk[fk.index(i)])
-	return k
+	return m * n / NOD(m, n)
+
 def multiNOK(lst):
 	while len(lst)>1:
 		lst=[NOK(lst[0],lst[1])]+lst[2:]
 	return lst[0]
+
 def method_gauss(llst):
 	k=1
 	count=l=len(llst)
